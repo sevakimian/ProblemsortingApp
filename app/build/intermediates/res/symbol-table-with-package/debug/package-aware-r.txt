@@ -654,7 +654,7 @@ id btnParam
 id btnSuivant
 id btnTuto
 id btn_nvProjet_ok
-id button
+id buttonOK
 id buttonPanel
 id cancel_action
 id chains
@@ -682,6 +682,7 @@ id ifRoom
 id image
 id info
 id italic
+id layoutProb
 id line1
 id line3
 id linearLayout

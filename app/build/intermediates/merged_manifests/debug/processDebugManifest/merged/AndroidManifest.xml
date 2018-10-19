@@ -17,23 +17,17 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-
-        <!-- <activity android:name=".MainActivity"> -->
-        <activity android:name="com.example.chova.problemsortingapp.AssessDim1Activity" >
+        <activity android:name="com.example.chova.problemsortingapp.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--
-        <activity android:name=".newProblemActivity" />
-        <activity android:name=".ProblemInput" />
-        -->
-        <!--
-        <activity android:name=".AssessDim1Activity"></activity>
-        <activity android:name=".AssessDim1Activity"></activity>
-        -->
+        <activity android:name="com.example.chova.problemsortingapp.newProblemActivity" />
+        <activity android:name="com.example.chova.problemsortingapp.ProblemInput" />
+        <activity android:name="com.example.chova.problemsortingapp.AssessDim1Activity" />
+
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />

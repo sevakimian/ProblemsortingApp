@@ -1,63 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_alignParentStart="false"
+    android:orientation="vertical"
     tools:context="com.example.chova.problemsortingapp.ProblemInput">
 
-    <TextView
-        android:id="@+id/txt_pblmInput"
-        android:layout_width="201dp"
-        android:layout_height="218dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginTop="48dp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtInput1" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:layout_marginTop="60dp"
-        android:text="@android:string/yes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtInput1"
-        android:layout_width="wrap_content"
-        android:layout_height="46dp"
-        android:layout_marginEnd="152dp"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="nouveau problème"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="261dp"
         android:layout_height="15dp"
+        android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:progress="20"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:progress="20" />
+    <!--app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/txtInput1"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="40dp"
+
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="nouveau problème"
+            android:textAlignment="center" />
+
+
+        <!-- android:layout_marginTop="60dp"
+            android:layout_marginEnd="152dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" -->
+        <Button
+            android:id="@+id/buttonOK"
+            android:layout_width="90dp"
+            android:layout_height="46dp"
+            android:layout_gravity="right"
+
+            android:layout_marginRight="30dp"
+
+            android:text="@android:string/yes" />
+        <!-- android:layout_marginTop="60dp"
+            android:layout_marginEnd="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutProb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_pblmInput"
+        android:layout_gravity="center"
+        android:layout_width="201dp"
+        android:layout_height="218dp"
+        android:textAlignment="center"
+        />
 
     <Button
         android:id="@+id/btnSuivant"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="312dp"
-        android:text="suivant"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtInput1" />
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text="suivant"/>
 
-</android.support.constraint.ConstraintLayout>
+
+</android.widget.LinearLayout>
