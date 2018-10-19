@@ -64,7 +64,7 @@ public class AssessDim1Activity extends AppCompatActivity {
                 public void onProgressChanged(SeekBar seekBar, int valeur, boolean b) {
 
                     String string = Integer.toString(valeur);
-                    AssessDim1Activity.this.afficheurs[0].setText(string);
+                    AssessDim1Activity.this.afficheurs[AssessDim1Activity.this.quelSeekBar()].setText(string);
                 }
 
                 @Override
@@ -83,5 +83,16 @@ public class AssessDim1Activity extends AppCompatActivity {
 
 
         }
+    }
+
+    public int quelSeekBar() {
+        int k = 0;
+        for (int i = 0; i < defileurs.length; i++) {
+
+            if (this.defileurs[i].isFocused()) {
+                k = i;
+            }
+        }
+        return k;
     }
 }
