@@ -3,6 +3,8 @@ package com.example.chova.problemsortingapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -10,9 +12,12 @@ import android.widget.TextView;
 
 public class AssessDim1Activity extends AppCompatActivity {
 
+    private LinearLayout[] lignes;
+    private TextView[] labelProblemes;
+    private LinearLayout[] couples;
     private SeekBar[] defileurs;
     private TextView[] afficheurs;
-    private LinearLayout[] lignes;
+
     private LinearLayout layout;
 
     @Override
@@ -24,9 +29,11 @@ public class AssessDim1Activity extends AppCompatActivity {
          this.layout=findViewById(R.id.linearLayout);
          this.layout.setPadding(15,60,15,10);
 
+         this.lignes = new LinearLayout[10];
+         this.labelProblemes= new TextView[10];
          this.defileurs = new SeekBar[10];
          this.afficheurs = new TextView[10];
-         this.lignes = new LinearLayout[10];
+         this.couples = new LinearLayout[10];
 
         //fonction pour obtenir le nombre de problème
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -35,36 +42,43 @@ public class AssessDim1Activity extends AppCompatActivity {
 
         for (int i =0 ; i < 10 ;i++){
 
-            this.lignes[i]=new LinearLayout(this);
-            this.layout.addView(this.lignes[i]);
+            //INITIALISATION DE LA LIGNE
+            this.lignes[i] = new LinearLayout(this);
+            this.lignes[i].setOrientation(LinearLayout.VERTICAL);/*
+            this.lignes[i].setHorizontalGravity(Gravity.CENTER);*/
+            this.lignes[i].setPadding(0,30,0,30);
 
-            this.lignes[i].setOrientation(LinearLayout.HORIZONTAL);
-            this.lignes[i].setMinimumWidth(80);
+            //INITIALISATION DU LABEL PROBLEME
+            int j=i+1;
+            String s = "probleme n°" + j;
+            this.labelProblemes[i]= new TextView(this);
+            this.labelProblemes[i].setText(s);
+            this.labelProblemes[i].setGravity(Gravity.CENTER);
 
-            //initialisation du défileur
+            //INITIALISATION DU COUPLE AFFICHEUR/DEFILEUR
+            this.couples[i]=new LinearLayout(this);
+            this.couples[i].setOrientation(LinearLayout.HORIZONTAL);
+            this.couples[i].setMinimumWidth(80);
 
+            //INITIALISATION DU LABEL
+            this.afficheurs[i]= new TextView(this);
+            this.afficheurs[i].setText( "5" );
+            this.afficheurs[i].setLayoutParams(new LinearLayout.LayoutParams(100,40));
+            this.afficheurs[i].setMinHeight(50);
+
+            //INITIALISATION DU DEFILEUR
             this.defileurs[i] = new SeekBar(this);
-            this.lignes[i].addView(this.defileurs[i]);
             this.defileurs[i].setMin( 0 );
             this.defileurs[i].setMax( 10 );
             this.defileurs[i].setMinimumWidth(70);
             this.defileurs[i].setProgress(5);
             this.defileurs[i].setLayoutParams(new LinearLayout.LayoutParams(900,LinearLayout.LayoutParams.WRAP_CONTENT));
 
-
-            //initialisation du label
-            this.afficheurs[i]= new TextView(this);
-            this.lignes[i].addView( this.afficheurs[i] );
-            this.afficheurs[i].setText( "5" );
-            this.afficheurs[i].setLayoutParams(new LinearLayout.LayoutParams(100,40));
-            this.afficheurs[i].setMinHeight(50);
-
             this.defileurs[i].setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int valeur, boolean b) {
 
-                    String string = Integer.toString(valeur);
-                    AssessDim1Activity.this.afficheurs[AssessDim1Activity.this.quelSeekBar()].setText(string);
+                    AssessDim1Activity.this.actualisationAfficheurs();
                 }
 
                 @Override
@@ -78,6 +92,14 @@ public class AssessDim1Activity extends AppCompatActivity {
                 }
             });
 
+
+            //MISE EN PAGE
+
+            this.layout.addView(this.lignes[i]);
+            this.lignes[i].addView(this.labelProblemes[i]);
+            this.lignes[i].addView(this.couples[i]);
+            this.couples[i].addView(this.defileurs[i]);
+            this.couples[i].addView( this.afficheurs[i] );
             //this.defileurs[i].setLayoutParams( ViewGroup. );
 
 
@@ -85,14 +107,11 @@ public class AssessDim1Activity extends AppCompatActivity {
         }
     }
 
-    public int quelSeekBar() {
-        int k = 0;
-        for (int i = 0; i < defileurs.length; i++) {
-
-            if (this.defileurs[i].isFocused()) {
-                k = i;
-            }
+   public void actualisationAfficheurs(){
+        for (int i=0; i<this.defileurs.length;  i++){
+            String string = Integer.toString(this.defileurs[i].getProgress());
+            this.afficheurs[i].setText(string);
         }
-        return k;
-    }
+   }
+
 }
