@@ -1072,6 +1072,10 @@
         "source": "C:\\Users\\sevak.hovakimian.19\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\b63477f7f644df11c41896b0082316bc\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
+        "merged": "C:\\Users\\sevak.hovakimian.19\\AndroidStudioProjects\\ProblemsortingApp\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_main.xml.flat",
+        "source": "C:\\Users\\sevak.hovakimian.19\\AndroidStudioProjects\\ProblemsortingApp\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
         "merged": "C:\\Users\\sevak.hovakimian.19\\AndroidStudioProjects\\ProblemsortingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\sevak.hovakimian.19\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\b63477f7f644df11c41896b0082316bc\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },

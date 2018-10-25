@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.eigsi.irsi.myapplication.MainActivity">
+    <item
+        android:id="@+id/retourAccueil"
+        android:orderInCategory="100"
+        android:title="Retour à l'accueil"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/retour"
+        android:orderInCategory="100"
+        android:title="Retour page précédente"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/params"
+        android:orderInCategory="100"
+        android:title="Paramètres"
+        app:showAsAction="never" />
+</menu>
